@@ -1,14 +1,11 @@
 /* Custom Properties for Global Branding */
 :root {
-  --primary-dark: #0b1c2d;
-  --divitra-blue: #0b3c5d;
-  --divitra-teal: #1f7a8c;
-  --divitra-green: #00c896; /* Your "Safety/Green" color */
-  --light-bg: #f4f7fb;
+  --primary-dark: #051622;    /* Deep Navy */
+  --divitra-blue: #1A3C5A;    /* Dark Blue */
+  --divitra-sky: #45B1E8;     /* Sky Blue */
+  --divitra-cyan: #00D2FF;    /* Energy Cyan */
   --white: #ffffff;
-  --text-muted: #5a6b7d;
 }
-
 body {
   margin: 0;
   padding: 0;
@@ -20,12 +17,13 @@ body {
 
 /* HERO SECTION - Updated for high-impact */
 .hero {
-  background: linear-gradient(135deg, var(--divitra-blue), var(--divitra-teal));
+  /* This creates a sophisticated 3-color energy gradient */
+  background: linear-gradient(135deg, #051622 0%, #1A3C5A 50%, #45B1E8 100%);
   color: var(--white);
   padding: 120px 20px;
   text-align: center;
   position: relative;
-  overflow: hidden;
+  border-bottom: 3px solid var(--divitra-cyan); /* Adds a "glow" line at the bottom */
 }
 
 .hero h1 {
