@@ -4,206 +4,381 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Divitra Energy | Bridging the Energy-Power Gap</title>
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Professional Deep-Tech Palette */
-    :root { 
-      --divitra-blue: #002b5c; 
-      --divitra-cyan: #00D2FF; 
-      --primary: #2E7D32; 
-      --secondary: #1976D2; 
-      --light: #f4f7fb; 
-    }
-
-    * { box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; margin: 0; padding-top: 90px; }
-    
+    :root { --primary: #2E7D32; --secondary: #1976D2; --accent: #FF9800; --light: #f4f7f6; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; margin: 0; }
     .container { max-width: 1100px; margin: auto; padding: 0 20px; }
     .section { padding: 80px 0; }
-    
-    /* Global Elements */
-    h2 { font-size: 2rem; color: var(--divitra-blue); text-align: center; margin-bottom: 40px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    
-    .card { 
-      background: white; padding: 30px; border-radius: 12px; 
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--divitra-blue); 
-    }
-    .highlight { border-top-color: var(--divitra-cyan); background: #f0f9ff; }
-
-    /* Navigation */
-    nav {
-      padding: 10px 5%; background: rgba(5, 22, 34, 0.98); 
-      display: flex; justify-content: space-between; align-items: center; 
-      position: fixed; width: 100%; top: 0; z-index: 1000; 
-      backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0, 210, 255, 0.2); height: 90px;
-    }
-
-    /* Hero Section */
-    .hero { 
-      background: linear-gradient(135deg, #001a33, #002b5c, #004080); 
-      color: white; padding: 100px 20px; text-align: center; 
-    }
-    .cta { 
-      background: var(--divitra-cyan); color: var(--divitra-blue); 
-      padding: 15px 30px; text-decoration: none; border-radius: 5px; 
-      font-weight: bold; display: inline-block; margin-top: 20px; transition: 0.3s; 
-    }
-    .cta:hover { background: white; transform: translateY(-2px); }
-
-    /* Performance Section */
-    .whitepaper-box { background: #e3f2fd; padding: 40px; border-radius: 15px; text-align: center; margin-top: 40px; }
-    
-    /* Applications */
-    .app-card { background: #f8fafc; padding: 25px; border-radius: 12px; border-top: 4px solid var(--divitra-blue); height: 100%; }
-    .app-card ul { padding-left: 18px; color: #555; font-size: 0.9rem; margin: 0; }
-
-    /* Tables */
-    table { width: 100%; border-collapse: collapse; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-    th { background: var(--divitra-blue); color: white; padding: 20px; }
-    td { padding: 15px; border-bottom: 1px solid #eee; text-align: center; }
-
-    footer { background: #002b5c; color: white; padding: 60px 20px; text-align: center; }
-
-    @media (max-width: 768px) {
-      body { padding-top: 70px; }
-      nav { height: 70px; }
-      nav img { height: 50px; }
-      .hero { padding: 60px 20px; }
-    }
+    .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); }
+    .highlight { border-top-color: var(--accent); background: #fffdf9; }
+    .hero { background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); color: white; padding: 100px 20px; text-align: center; }
+    .cta { background: var(--primary); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 20px; transition: 0.3s; }
+    .cta:hover { background: #1b5e20; transform: translateY(-2px); }
+    .img-box { text-align: center; margin: 40px 0; background: white; padding: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .tech-badge { display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 10px; }
+    footer { background: #1a1a1a; color: white; padding: 40px 20px; text-align: center; }
   </style>
 </head>
+
 <body>
 
-<nav>
-  <img src="divitra-logo1.png" alt="Divitra Logo" style="height: 70px;">
-  <div style="background: rgba(0, 210, 255, 0.1); color: #00D2FF; padding: 8px 15px; border-radius: 4px; border: 1px solid rgba(0, 210, 255, 0.3); font-weight: bold; font-size: 0.75rem; text-transform: uppercase;">
+<nav style="
+  padding: 10px 5% ; 
+  background: rgba(5, 22, 34, 0.95); 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  position: fixed; 
+  width: 100%; 
+  top: 0; 
+  z-index: 1000; 
+  box-sizing: border-box; 
+  backdrop-filter: blur(10px); 
+  border-bottom: 1px solid rgba(0, 210, 255, 0.2); 
+  height: 90px;
+">
+  <div style="display: flex; align-items: center;">
+    <img src="divitra-logo1.png" alt="Divitra Logo" style="height: 75px; width: auto; object-fit: contain;">
+  </div>
+
+  <div style="
+    background: rgba(0, 210, 255, 0.1); 
+    color: #00D2FF; 
+    padding: 8px 15px; 
+    border-radius: 4px; 
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    font-weight: bold; 
+    font-size: 0.8rem; 
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  ">
     India | Finland Deep-Tech
   </div>
 </nav>
 
-<header class="hero">
+<header class="hero" style="padding-top: 160px; padding-bottom: 100px;">
   <div class="container">
-    <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 20px;">Fast-Charging Power for a World That Can’t Wait</h1>
-    <p style="font-size: 1.2rem; max-width: 800px; margin: auto; opacity: 0.9;">
-      Engineering a new class of <strong>Aqueous Hybrid Energy Storage</strong> to bridge the gap between battery capacity and supercapacitor speed.
+    <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); margin-bottom: 20px;">Fast-Charging Power for a World That Can’t Wait</h1>
+    <p style="font-size: 1.25rem; max-width: 800px; margin: auto; opacity: 0.9;">
+      Divitra is engineering a new class of <strong>Aqueous Hybrid Energy Storage</strong>. 
+      We bridge the gap between battery capacity and supercapacitor speed.
     </p>
-    <a href="#technology" class="cta">Explore Technology</a>
+    <a href="#technology" class="cta">View Performance Data</a>
   </div>
 </header>
-
+ 
 <section class="section container">
-  <h2>The Energy Compromise — Solved</h2>
+  <h2 style="text-align: center;">The Energy Compromise — Solved</h2>
   <div class="grid">
     <div class="card">
       <h3 style="color: var(--secondary);">The Industry Bottleneck</h3>
-      <p>Conventional batteries offer high energy but charge slowly and degrade quickly. Supercapacitors offer speed but lack capacity. This trade-off limits the global electric revolution.</p>
+      <p>Conventional batteries offer high energy but charge slowly and degrade quickly. Supercapacitors offer speed but lack capacity. This trade-off limits the potential of the electric revolution.</p>
     </div>
     <div class="card highlight">
-      <h3 style="color: var(--divitra-blue);">The Divitra Solution</h3>
-      <p>Our fabric-based asymmetric architecture delivers <strong>Battery-level Energy</strong> with <strong>Capacitor-level Power</strong>. Safe, ultra-fast charging, and built for a decade of use.</p>
+      <h3 style="color: var(--primary);">The Divitra Solution</h3>
+      <p>Our fabric-based asymmetric architecture delivers <strong>Battery-level Energy</strong> with <strong>Capacitor-level Power</strong>. Inherently safe, ultra-fast charging, and built for a decade of use.</p>
     </div>
   </div>
 </section>
 
 <section id="technology" class="section" style="background-color: var(--light);">
   <div class="container">
-    <h2>Proprietary Fabric-Based Architecture</h2>
-    <div style="text-align: center; margin-bottom: 40px;">
-        <img src="schematic-architecture.png" alt="Divitra Schematic" style="max-width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-        <p style="font-style: italic; color: #666; margin-top: 15px;">Fig 1.0: Asymmetric Aqueous Hybrid Cell Construction</p>
-    </div>
-    <div class="grid">
-      <div class="card"><h3>Scalable Platform</h3><p>Compatible with roll-to-roll textile manufacturing, drastically reducing CAPEX costs.</p></div>
-      <div class="card"><h3>Non-Flammable</h3><p>Aqueous electrolyte eliminates thermal runaway. Safe for all indoor applications.</p></div>
-      <div class="card"><h3>Long Cycle Life</h3><p>Engineered for >10,000 cycles with minimal degradation.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section container">
-  <h2>Performance Comparison</h2>
-  <div style="text-align: center; margin-bottom: 40px;">
-    <img src="assets-architecture1.png" alt="Performance Data" style="max-width: 100%; border: 1px solid #ddd; border-radius: 10px;">
-  </div>
-  <div class="whitepaper-box">
-    <h3>Moving from TRL 3/4 to TRL 5/7</h3>
-    <p>Originating from research at <strong>University of Oulu (Finland)</strong>, our technology is validated to break the power-energy trade-off.</p>
-    <a href="mailto:info@divitraenergy.com?subject=Technical Whitepaper Request" class="cta">Request Whitepaper</a>
-  </div>
-</section>
-
-<section id="about" class="section">
-  <div class="container" style="max-width: 850px; text-align: center;">
-    <h2>The Vision Behind Divitra</h2>
-    <p style="font-size: 1.1rem; color: #555;">Divitra Energy was born to eliminate the safety and longevity barriers of modern storage. By combining Indian manufacturing ingenuity with Finnish research, we are creating inherently safe power systems.</p>
+    <h2 style="text-align: center;">Proprietary Fabric-Based Architecture</h2>
+    <p style="text-align: center; max-width: 700px; margin: auto;">By integrating chemistry of innovative material combination into 3D textile substrates, we've created a scalable, non-flammable energy platform.</p>
     
-    <div style="display: flex; justify-content: center; margin-top: 40px;">
-        <div style="text-align: left; border-left: 5px solid var(--divitra-cyan); padding: 20px; background: #f0f9ff; width: fit-content;">
-            <p style="font-size: 1.2rem; color: var(--divitra-blue); font-weight: bold; margin: 0;">
-                "Divitra is not making a better battery—it is enabling a new class of permanent power components."
-            </p>
-        </div>
+    <div class="img-box">
+      <img src="schematic-architecture.png" alt="Divitra Fabric-Based Schematic" style="max-width: 100%; border-radius: 8px;">
+      <p style="font-style: italic; color: #666; margin-top: 10px;">Fig 1.0: Asymmetric Aqueous Hybrid Cell Construction</p>
     </div>
-  </div>
-</section>
 
-<section class="section" style="background: var(--light);">
-  <div class="container">
-    <h2>Core Application Areas</h2>
     <div class="grid">
-      <div class="app-card"><h3>1. Industrial Tools</h3><ul><li>Instant Power / High Torque</li><li>&lt;5 min fast charge</li><li>Industrial safety</li></ul></div>
-      <div class="app-card"><h3>2. E-Micromobility</h3><ul><li>10× longer cycle life</li><li>Rapid Turnaround</li><li>Hybrid booster module</li></ul></div>
-      <div class="app-card"><h3>3. Grid-Edge Buffering</h3><ul><li>Millisecond Response</li><li>Millions of micro-cycles</li><li>Low insurance/permitting</li></ul></div>
-      <div class="app-card"><h3>4. Critical Backup</h3><ul><li>Zero Lag UPS</li><li>15-year service life</li><li>Indoor safe</li></ul></div>
-      <div class="app-card"><h3>5. Charging Infra</h3><ul><li>High load resilience</li><li>Low maintenance</li><li>Non-flammable</li></ul></div>
-      <div class="app-card" style="border-top-color: var(--divitra-cyan);"><h3>6. Solar + Storage</h3><ul><li>Instant Capture</li><li>No midday throttling</li><li>Village resilient</li></ul></div>
+      <div class="card">
+        <h3>Scalable Platform</h3>
+        <p>Compatible with roll-to-roll textile manufacturing, reducing CAPEX costs compared to traditional foil-based lithium lines.</p>
+      </div>
+      <div class="card">
+        <h3>Non-Flammable</h3>
+        <p>Aqueous electrolyte eliminates thermal runaway. Safe for wearable tech, indoor industrial tools, and EVs.</p>
+      </div>
+      <div class="card">
+        <h3>Long Cycle Life</h3>
+        <p>Engineered for >10,000 cycles with minimal degradation, providing a lower Total Cost of Ownership (TCO).</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="section container">
-  <h2>How Divitra Redefines the Standard</h2>
-  <div style="overflow-x: auto;">
-    <table>
-      <thead>
-        <tr><th>Feature</th><th>Lead-Acid</th><th>Lithium-Ion</th><th style="background: var(--divitra-cyan); color: #002b5c;">Divitra Hybrid</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Safety</strong></td><td>Acid/Leaks</td><td>Runaway Risk</td><td><strong>Inherently Safe</strong></td></tr>
-        <tr><td><strong>Charge Time</strong></td><td>8–12 Hours</td><td>1–3 Hours</td><td><strong>&lt; 5 Minutes</strong></td></tr>
-        <tr><td><strong>Cycle Life</strong></td><td>300 – 500</td><td>1,000 – 2,000</td><td><strong>&gt; 10,000</strong></td></tr>
-        <tr><td><strong>Operational Life</strong></td><td>1–2 Years</td><td>3–5 Years</td><td><strong>10+ Years</strong></td></tr>
-      </tbody>
-    </table>
+  <h2 style="text-align: center;">Performance Comparison</h2>
+  
+  <div class="img-box" style="border: 2px solid #eef2f1;">
+    <img src="assets-architecture1.png" alt="Divitra Performance vs Competitors" style="max-width: 100%;">
+  </div>
+
+  <div style="background: #e3f2fd; padding: 30px; border-radius: 12px; text-align: center;">
+    <h3>Moving from TRL 3/4 to TRL 5/7</h3>
+    <p>Originating from research at <strong> University of Oulu (Finland)</strong>, our prototype has validated the ability to break the energy-power trade-off.</p>
+     <a href="mailto:info@divitraenergy.com?subject=Technical%20Whitepaper%20Request" class="btn">Request Technical Whitepaper</a>
   </div>
 </section>
+  
+<section id="about" class="section" style="padding: 80px 0; background: #ffffff;">
+  <div class="container" style="max-width: 800px; margin: auto; text-align: center;">
+    
+    <h2 style="color: var(--divitra-blue); margin-bottom: 30px;">The Vision Behind Divitra</h2>
+    
+    <p style="color: #555; font-size: 1.1rem; line-height: 1.8; margin-bottom: 25px;">
+      Divitra Energy was born from a mission to eliminate the safety and longevity barriers of modern energy storage. 
+    </p>
+    
+    <p style="color: #555; font-size: 1.1rem; line-height: 1.8; margin-bottom: 40px;">
+      By combining Indian manufacturing ingenuity with advanced research from the <strong>University of Oulu, Finland</strong>, we are building a world where power is not just fast and affordable, but inherently safe—from urban e-mobility to industrial grid buffering.
+    </p>
+    
+    <div style="margin: auto; padding: 20px; border-top: 2px solid var(--divitra-cyan); border-bottom: 2px solid var(--divitra-cyan); display: inline-block;">
+      <em style="color: var(--divitra-blue); font-size: 1.2rem; font-weight: 500;">
+        "Our goal is to replace hazardous materials with 3D textile-based sustainability that lasts a decade."
+      </em>
+    </div>
+    <div style="margin: auto; padding: 20px; border-top: 2px solid var(--divitra-cyan); border-bottom: 2px solid var(--divitra-cyan); display: inline-block;">
+      <em style="color: var(--divitra-blue); font-size: 1.2rem; font-weight: bold;">
+        "Divitra is not making a better battery—it is enabling a new class of permanent power components."
+      </em>
+    </div>
+      
+  </div>
+</section>
+  
+  <div class="video-container" style="max-width: 350px; margin: 40px auto; text-align: center;">
+  <video 
+    width="100%" 
+    height="auto" 
+    controls 
+    autoplay 
+    muted 
+    loop 
+    poster="assets-architecture1.png" 
+    style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+    
+    <source src="divitra-reel.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p style="margin-top: 15px; font-style: italic; color: #666;">
+    Meet Divitra: Where Energy Meets Power!
+  </p>
+</div>
 
-<section id="contact" class="section" style="background: var(--light);">
-  <div class="container">
-    <h2>Connect with Divitra</h2>
-    <div class="grid">
-      <div>
-        <h3>Global Operations</h3>
-        <p>Delhi NCR (Noida), India | Oulu, Finland</p>
-        <p><strong>Email:</strong><br><a href="mailto:info@divitraenergy.com" style="color: var(--divitra-cyan); font-weight: bold; text-decoration: none;">info@divitraenergy.com</a></p>
+<section id="applications" class="section" style="padding: 80px 0; background: #ffffff;">
+  <div class="container" style="max-width: 1100px; margin: auto;">
+     <div style="background: var(--divitra-blue); color: white; padding: 40px; border-radius: 15px; margin-bottom: 60px; text-align: center; box-shadow: 0 10px 30px rgba(0,43,92,0.15);">
+      <h2 style="color: var(--divitra-cyan); margin-bottom: 15px;">Core Technology Basis</h2>
+      <p style="font-size: 1.15rem; line-height: 1.8; max-width: 900px; margin: auto; opacity: 0.9;">
+        Divitra has developed a fabric-based, aqueous asymmetric supercapacitor that uniquely combines <strong>battery-level energy density (~200 Wh/kg)</strong> with <strong>capacitor-level power (~3 kW/kg)</strong>, ultra-fast charging, and <strong>>10,000-cycle lifetime</strong>—overcoming the traditional energy–power trade-off.
+      </p>
+      <div style="margin-top: 25px; font-style: italic; font-size: 0.95rem; color: var(--divitra-cyan);">
+        Strategic Positioning: Replacing consumable batteries with permanent, high-power energy components.
       </div>
+    </div>
+    <div style="text-align: center; margin-bottom: 50px;">
+      <h2 style="color: var(--divitra-blue);">Core Application Areas</h2>
+      <p style="color: #666; max-width: 700px; margin: auto;">
+        Combining <strong>~200 Wh/kg</strong> energy with <strong>>3 kW/kg</strong> power to replace consumable batteries with permanent power components.
+      </p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+      
+      <div style="background: #f8fafc; padding: 25px; border-radius: 12px; border-top: 4px solid var(--divitra-blue);">
+        <h3 style="color: var(--divitra-blue); font-size: 1.1rem; margin-bottom: 10px;">1. Industrial Tools</h3>
+        <ul style="padding-left: 18px; color: #555; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+          <li><strong>Instant Power:</strong> Consistent high torque.</li>
+          <li><strong>Zero Downtime:</strong> <5 min fast charge.</li>
+          <li><strong>Safety:</strong> No thermal runaway risk.</li>
+        </ul>
+      </div>
+
+      <div style="background: #f8fafc; padding: 25px; border-radius: 12px; border-top: 4px solid var(--divitra-blue);">
+        <h3 style="color: var(--divitra-blue); font-size: 1.1rem; margin-bottom: 10px;">2. E-Micromobility</h3>
+        <ul style="padding-left: 18px; color: #555; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+          <li><strong>Fleet ROI:</strong> 10× longer cycle life.</li>
+          <li><strong>Rapid Turnaround:</strong> 5-min charging.</li>
+          <li><strong>Efficiency:</strong> Integrated hybrid booster.</li>
+        </ul>
+      </div>
+
+      <div style="background: #f8fafc; padding: 25px; border-radius: 12px; border-top: 4px solid var(--divitra-blue);">
+        <h3 style="color: var(--divitra-blue); font-size: 1.1rem; margin-bottom: 10px;">3. Grid-Edge Buffering</h3>
+        <ul style="padding-left: 18px; color: #555; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+          <li><strong>Fast Response:</strong> Millisecond spikes.</li>
+          <li><strong>Durability:</strong> Millions of micro-cycles.</li>
+          <li><strong>Low OpEx:</strong> No fire suppression needed.</li>
+        </ul>
+      </div>
+
+      <div style="background: #f8fafc; padding: 25px; border-radius: 12px; border-top: 4px solid var(--divitra-blue);">
+        <h3 style="color: var(--divitra-blue); font-size: 1.1rem; margin-bottom: 10px;">4. Critical Backup</h3>
+        <ul style="padding-left: 18px; color: #555; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+          <li><strong>Zero Lag:</strong> Instant UPS switching.</li>
+          <li><strong>Maintenance-Free:</strong> 15-year life.</li>
+          <li><strong>Safety:</strong> Intrinsic aqueous chemistry.</li>
+        </ul>
+      </div>
+
+      <div style="background: #f8fafc; padding: 25px; border-radius: 12px; border-top: 4px solid var(--divitra-blue);">
+        <h3 style="color: var(--divitra-blue); font-size: 1.1rem; margin-bottom: 10px;">5. Charging Infra</h3>
+        <ul style="padding-left: 18px; color: #555; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+          <li><strong>Load Balancing:</strong> High user density.</li>
+          <li><strong>Resilience:</strong> Minimal upkeep needs.</li>
+          <li><strong>Safety:</strong> Non-flammable for public areas.</li>
+        </ul>
+      </div>
+
+      <div style="background: #f8fafc; padding: 25px; border-radius: 12px; border-top: 4px solid var(--divitra-cyan);">
+        <h3 style="color: var(--divitra-blue); font-size: 1.1rem; margin-bottom: 10px;">6. Solar + Storage</h3>
+        <ul style="padding-left: 18px; color: #555; font-size: 0.9rem; line-height: 1.5; margin: 0;">
+          <li><strong>Instant Capture:</strong> Catch every ray.</li>
+          <li><strong>Peak Use:</strong> No throttling at midday.</li>
+          <li><strong>Resilient:</strong> Reliable in village heat.</li>
+        </ul>
+      </div>
+      <div style="display: flex; justify-content: center; width: 100%; margin-top: 60px;">
+  
+  <div style="display: flex; justify-content: center; width: 100%; margin: 60px 0;">
+  
+</div>
+              
+  </div>
+</section>  
+    
+<section id="comparison" class="section" style="padding: 80px 0; background: #f4f7fb;">
+  <div class="container" style="max-width: 1000px; margin: auto; text-align: center;">
+    
+    <h2 style="color: var(--divitra-blue); margin-bottom: 40px;">How Divitra Redefines the Standard</h2>
+    
+    <div style="overflow-x: auto;">
+      <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+        <thead>
+          <tr style="background: var(--divitra-blue); color: white;">
+            <th style="padding: 20px; text-align: left;">Feature</th>
+            <th style="padding: 20px;">Lead-Acid</th>
+            <th style="padding: 20px;">Lithium-Ion</th>
+            <th style="padding: 20px; background: var(--divitra-cyan);">Divitra Hybrid</th>
+          </tr>
+        </thead>
+        <tbody style="color: #444;">
+          <tr style="border-bottom: 1px solid #eee;">
+            <td style="padding: 15px; text-align: left; font-weight: bold;">Safety</td>
+            <td style="padding: 15px;">Acid Leaks / Heavy</td>
+            <td style="padding: 15px;">Thermal Runaway Risk</td>
+            <td style="padding: 15px; font-weight: bold; color: #27ae60;">Inherently Safe (Aqueous)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #eee;">
+            <td style="padding: 15px; text-align: left; font-weight: bold;">Charge Time</td>
+            <td style="padding: 15px;">8–12 Hours</td>
+            <td style="padding: 15px;">1–3 Hours</td>
+            <td style="padding: 15px; font-weight: bold; color: #27ae60;">&lt; 5 Minutes</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #eee;">
+            <td style="padding: 15px; text-align: left; font-weight: bold;">Cycle Life</td>
+            <td style="padding: 15px;">300 – 500</td>
+            <td style="padding: 15px;">1,000 – 2,000</td>
+            <td style="padding: 15px; font-weight: bold; color: #27ae60;">&gt; 10,000</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #eee;">
+            <td style="padding: 15px; text-align: left; font-weight: bold;">Power Density</td>
+            <td style="padding: 15px;">Low</td>
+            <td style="padding: 15px;">Moderate</td>
+            <td style="padding: 15px; font-weight: bold; color: #27ae60;">Ultra-High </td>
+          </tr>
+          <tr>
+            <td style="padding: 15px; text-align: left; font-weight: bold;">Operational Life</td>
+            <td style="padding: 15px;">1–2 Years</td>
+            <td style="padding: 15px;">3–5 Years</td>
+            <td style="padding: 15px; font-weight: bold; color: #27ae60;">10+ Years</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top: 30px; color: #666; font-style: italic;">
+      *Divitra’s Hybrid Technology offers the longevity of a capacitor with the energy storage of a battery.
+    </p>
+
+  </div>
+</section>
+  
+  <section id="roadmap" class="section" style="padding: 80px 0; background: #f4f7fb;">
+  <div class="container" style="max-width: 1000px; margin: auto; text-align: center;">
+    <h2 style="color: var(--divitra-blue); margin-bottom: 50px;">Strategic Roadmap 2026</h2>
+    
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; position: relative;">
+      
+      <div style="flex: 1; min-width: 250px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+        <div style="color: var(--divitra-cyan); font-weight: bold; margin-bottom: 10px;">FEB 2026</div>
+        <h3 style="color: var(--divitra-blue); font-size: 1.2rem;">Identity Launch</h3>
+        <p style="color: #666; font-size: 0.95rem;">Global digital presence established and technology validation phase initiated.</p>
+      </div>
+
+      <div style="flex: 1; min-width: 250px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+        <div style="color: var(--divitra-cyan); font-weight: bold; margin-bottom: 10px;">Q2 2026</div>
+        <h3 style="color: var(--divitra-blue); font-size: 1.2rem;">Pilot Lab Setup</h3>
+        <p style="color: #666; font-size: 0.95rem;">Commissioning of specialized 3D textile coating facilities and aqueous electrolyte synthesis.</p>
+      </div>
+
+      <div style="flex: 1; min-width: 250px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+        <div style="color: var(--divitra-cyan); font-weight: bold; margin-bottom: 10px;">Q3 2026</div>
+        <h3 style="color: var(--divitra-blue); font-size: 1.2rem;">Prototype Trials</h3>
+        <p style="color: #666; font-size: 0.95rem;">First-generation prototype testing with select Indian e-micromobility partners for real-world validation.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+  
+<section id="contact" class="section light" style="background: #f4f7fb;">
+  <div class="container" style="max-width: 1000px; margin: auto;">
+    <h2 style="color: var(--divitra-blue);">Connect with Divitra</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; text-align: left; margin-top: 50px;">
+      
+      <div>
+        <h3 style="color: var(--divitra-blue);">Global Operations</h3>
+        <p style="color: #555;">Partnering across borders to bridge the energy-power gap. Reach out for technical whitepapers or investment inquiries.</p>
+        
+        <div style="margin-top: 30px;">
+          <p><strong>Email:</strong><br>
+          <a href="mailto:info@divitraenergy.com" style="color: var(--divitra-cyan); text-decoration: none; font-weight: bold;">info@divitraenergy.com</a></p>
+          
+          <p><strong>Locations:</strong><br>
+          Delhi NCR (Noida), India | Oulu, Finland</p>
+        </div>
+      </div>
+
       <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-        <form action="mailto:info@divitraenergy.com" method="post" enctype="text/plain" style="display: flex; flex-direction: column; gap: 15px;">
-          <input type="text" placeholder="Full Name" required style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
-          <input type="email" placeholder="Professional Email" required style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
-          <textarea placeholder="Interest (Investment, Pilot, Research)" rows="3" style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
-          <button type="submit" class="cta" style="border: none; cursor: pointer;">Send Inquiry</button>
+        <form action="mailto:divitra.energy@gmail.com" method="post" enctype="text-plain" style="display: flex; flex-direction: column; gap: 15px;">
+          <input type="text" placeholder="Full Name" style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+          <input type="email" placeholder="Professional Email" style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+          <textarea placeholder="Interest (Investment, Pilot, Research)" rows="3" style="padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit;"></textarea>
+          <button type="submit" class="cta" style="margin-top: 10px; border: none; cursor: pointer; width: 100%;">Send Inquiry</button>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <img src="divitra-logo1.png" alt="Divitra" style="width: 150px; margin-bottom: 20px;">
-  <p>© 2026 Divitra Energy & Technology Pvt. Ltd.<br>Patents Pending | Proprietary Aqueous Hybrid Technology</p>
-</footer>
+ <footer style="padding: 50px 0; background: #002b5c; color: white; text-align: center;">
+  <img src="divitra-logo1.png" alt="Divitra Logo" style="width: 150px; margin-bottom: 20px;">
+  <p style="max-width: 600px; margin: auto; opacity: 0.8;">
+    Engineering the future of safe, sustainable, and ultra-fast aqueous hybrid energy storage.
+  </p>
+  <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.6;">
+    © 2026 Divitra Energy & Technology Pvt. Ltd. | Noida, India & Oulu, Finland<br>
+    Patents Pending | Proprietary Aqueous Hybrid Technology
+  </p>
+</footer> 
 
 </body>
 </html>
