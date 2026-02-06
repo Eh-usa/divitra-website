@@ -2,9 +2,9 @@ BEGIN:VCARD
 VERSION:3.0
 FN:Divitra Energy
 ORG:Divitra Energy & Technology Pvt. Ltd.
-TEL;TYPE=WORK,VOICE:+919463525363
 EMAIL;TYPE=PREF,INTERNET:info@divitraenergy.com
 URL:https://www.divitraenergy.com
 ADR;TYPE=WORK:;;Noida, India | Oulu, Finland
 REV:2026-02-06T09:35:00Z
+
 END:VCARD
